@@ -1,0 +1,8 @@
+{
+  "name": "AplicativoCervejeira",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "abd82cd2"
+}
