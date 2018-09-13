@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Relatórios</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let producao of producoes | async" (click)="escolha(producao)">
+      {{ producao.name }}
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+    </button>  
+  </ion-list>
+
+</ion-content>

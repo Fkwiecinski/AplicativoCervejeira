@@ -1,31 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+
+  <ion-navbar color="primary"> 
+    <ion-title>Menu</ion-title>
   </ion-navbar>
+  
 </ion-header>
 
 <ion-content padding>
-  <h3>Faça seu login</h3>
-
-  <ion-list>
-
-    <ion-item>
-      <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-  
-  </ion-list>
-
-  <button ion-button block>Entrar</button>
-
-  <button ion-button block (click)="goToOtherPage()">Cadastrar-se</button>
+  <br>
+  <h1>O que gostaria de fazer?</h1>
+  <br>
+  <br>
+  <br>
+  <button ion-button icon-end block (click)='produzir(producao)'>
+    Produzir cerveja
+    <ion-icon name="beer"></ion-icon>
+  </button>
+  <br>
+  <button ion-button icon-end block (click)='relatorios()'>
+    Ver relatórios 
+    <ion-icon name="clipboard"></ion-icon>
+  </button>
 
 </ion-content>

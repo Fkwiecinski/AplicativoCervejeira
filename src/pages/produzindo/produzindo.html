@@ -1,0 +1,63 @@
+<script *ngFor="let prod of producao | async">
+  {{prod.name}}
+</script>
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngFor="let prod of producao | async">{{prod.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      Rampa {{rampaAtu}}
+    </ion-card-header>
+    <ion-card-content>
+      Rampa programada para {{tempePro}} °C  e {{tempoPro}} minutos
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row justify-content-center>
+      <h2>Temperatura atual</h2>
+    </ion-row>
+    <ion-row justify-content-center>
+      <h3>{{tempeAtu}} °C</h3>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col>
+        <h2>Tempo atual</h2>
+      </ion-col>
+      <ion-col push-1>
+        <h3>{{tempoAtu}} minutos</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <ion-col>
+        <h2>Tempo total</h2>
+      </ion-col>
+      <ion-col push-1>
+        <h3>{{tempoTot}} minutos</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-card-header>
+      O que fazer?
+    </ion-card-header>
+    <ion-card-content>
+      {{mensagem}}
+    </ion-card-content>
+  </ion-card>
+
+  <button ion-button block [disabled]="1">OK</button>
+
+</ion-content>

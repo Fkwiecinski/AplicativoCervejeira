@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Relatório detalhado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+          <ion-item>
+            <ion-label stacked>Nome</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button type="submit" [disabled]="!form.valid" (click)="submitAlterar()" color="secondary">
+            <ion-icon name="create"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col push-1>
+          <h5>Rampas: {{ producao.ramp }}</h5>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>    
+      <ion-row justify-content-center>
+          <h2>Temperaturas / Tempos</h2>
+      </ion-row>
+
+      <ion-row justify-content-center>
+        <ion-col col-4 pull-1>Programada:</ion-col>
+        <ion-col col-4 push-1>Alcançada:</ion-col>
+      </ion-row>
+
+      <ion-row justify-content-center *ngFor="let tempo of tempPro">
+        <ion-col col-8 push-1>{{tempo}}</ion-col>
+        <ion-col col-4 pull-1>-</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div padding>
+      <button ion-button block color="danger" (click)="submitRemover(producao.key)">Excluir</button>
+    </div>
+  </form>
+</ion-content>
